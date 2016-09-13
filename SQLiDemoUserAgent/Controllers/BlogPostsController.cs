@@ -13,7 +13,18 @@ namespace SQLiDemoUserAgent.Controllers
 {
     public class BlogPostsController : Controller
     {
-        private BlogEDM db = new BlogEDM();
+        private BlogEDM db;
+
+        public BlogPostsController()
+        {
+            db = new BlogEDM();
+        }
+
+        public BlogPostsController(BlogEDM db)
+        {
+            this.db = db;
+        }
+
 
         // GET: BlogPosts
         [LogUserAgent]
