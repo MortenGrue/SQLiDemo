@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using SQLiDemoUserAgent.Entity;
+using SQLiDemoUserAgent.AttributeFilters;
 
 namespace SQLiDemoUserAgent.Controllers
 {
@@ -15,24 +16,10 @@ namespace SQLiDemoUserAgent.Controllers
         private BlogEDM db = new BlogEDM();
 
         // GET: BlogPosts
+        [LogUserAgent]
         public ActionResult Index()
         {
             return View(db.BlogPosts.ToList());
-        }
-
-        // GET: BlogPosts/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            BlogPost blogPost = db.BlogPosts.Find(id);
-            if (blogPost == null)
-            {
-                return HttpNotFound();
-            }
-            return View(blogPost);
         }
 
         // GET: BlogPosts/Create

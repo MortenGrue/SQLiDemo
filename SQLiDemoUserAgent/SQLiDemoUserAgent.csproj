@@ -130,6 +130,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="AttributeFilters\LogUserAgentAttribute.cs" />
     <Compile Include="Controllers\BlogPostsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Entity\BlogEDM.cs" />
@@ -176,7 +177,6 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\BlogPosts\Create.cshtml" />
     <Content Include="Views\BlogPosts\Delete.cshtml" />
-    <Content Include="Views\BlogPosts\Details.cshtml" />
     <Content Include="Views\BlogPosts\Edit.cshtml" />
     <Content Include="Views\BlogPosts\Index.cshtml" />
   </ItemGroup>
