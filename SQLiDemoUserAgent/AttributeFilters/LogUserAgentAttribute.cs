@@ -14,7 +14,7 @@ namespace SQLiDemoUserAgent.AttributeFilters
                 {
                     con.Open();
 
-                    string sql = "SELECT 1 FROM dbo.UserAgentLog WHERE Page = 'Blog' AND UserAgent = '" + filterContext.HttpContext.Request.Headers["User-Agent"] + "' ;";
+                    string sql = $"SELECT 1 FROM dbo.UserAgentLog WHERE Page = 'Blog' AND UserAgent = '{filterContext.HttpContext.Request.Headers["User-Agent"]}' ;";
                     SqlCommand comm = new SqlCommand(sql, con);
                     var res = comm.ExecuteScalar();
 
