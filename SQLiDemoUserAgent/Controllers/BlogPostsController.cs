@@ -23,6 +23,7 @@ namespace SQLiDemoUserAgent.Controllers
 
 
         // GET: BlogPosts
+        //[LogUserWC]
         [LogUserAgent]
         public ActionResult Index()
         {
